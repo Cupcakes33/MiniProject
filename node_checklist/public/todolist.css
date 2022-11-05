@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+:root {
+  --main-bg: #212832;
+  --sub-btn: #29a29d;
+  --sub-perple: #d1c6f3;
+  --sub-perple-glow: 0px 0px 4px hsl(255, 65%, 86%, 0.75);
+  --sub-coral: #e9bcac;
+  --sub-coral-glow: 0px 0px 4px hsl(16, 58%, 79%, 0.75);
+  --sub-cove: #75b3b7;
+  --sub-cobe-glow: 0px 0px 4px hsl(184, 31%, 59%, 0.75);
+  --light: #eee;
+  --grey: #aaa;
+  --dark: #313154;
+  --dark-glow: 0px 0px 4px hsl(240, 26%, 26%, 0.75);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--main-bg);
+}
+
+.header {
+  width: 100%;
+  height: 20vh;
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-buttons {
+  width: 15%;
+  min-width: 220px;
+  height: 60px;
+  font-size: 1.2em;
+  padding: 0 1em;
+  margin: 20px;
+  background: var(--sub-btn);
+  cursor: pointer;
+  border-radius: 10px;
+  color: var(--light);
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.banner img {
+  width: 200px;
+}
+
+.todo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+  appearance: none;
+  /* 요소자체구성요소 숨기기 */
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+/* 체크박스와 라디오박스, 버튼의 외곽선 및 배경을 지우고 커서를 포인터로 변경 */
+/* 초기값 설정 */
+
+h3 {
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  color: var(--grey);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.create-todo-wrap {
+  width: 70%;
+}
+
+.create-todo-wrap input[type="text"] {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  color: var(--dark);
+  background: var(--light);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+}
+
+.todo-option {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  background: var(--light);
+  color: var(--grey);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-option input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid;
+  margin-bottom: 5px;
+}
+.bubble.calendar {
+  border-color: var(--sub-coral);
+  box-shadow: var(--sub-coral-glow);
+}
+
+.bubble.materials {
+  border-color: var(--sub-perple);
+  box-shadow: var(--sub-perple-glow);
+}
+.bubble.reservation {
+  border-color: var(--sub-cove);
+  box-shadow: var(--sub-cove-glow);
+}
+
+.bubble::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.bubble.calendar::after {
+  background-color: var(--sub-coral);
+  box-shadow: (var(--sub-coral-glow));
+}
+
+.bubble.materials::after {
+  background-color: var(--sub-perple);
+  box-shadow: (var(--sub-perple-glow));
+}
+
+.bubble.reservation::after {
+  background-color: var(--sub-cove);
+  box-shadow: (var(--sub-cove-glow));
+}
+
+input:checked ~ .bubble::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+.create-todo-wrap input[type="submit"] {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  color: var(--light);
+  background: var(--sub-btn);
+  border-radius: 5px;
+  box-shadow: var(--dark-glow);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-todo-wrap input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+.paint-list-wrap {
+  width: 70%;
+  margin: 1rem 0;
+}
+
+.paint-list-wrap .list {
+  margin: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: var(--dark-glow);
+  margin-bottom: 1rem;
+}
+.todo-item.done .todo-contents input {
+  text-decoration: line-through;
+  color: var(--grey);
+}
+
+.todo-item label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-contents {
+  flex: 1 1 0%;
+}
+
+.todo-contents input {
+  color: var(--grey);
+  font-size: 1.25rem;
+}
+
+.todo-button {
+  display: flex;
+  align-items: center;
+}
+
+.todo-button button {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit {
+  margin-right: 0.5rem;
+  background-color: var(--sub-btn);
+}
+
+.delete {
+  background-color: var(--sub-btn);
+}
+
+.edit:hover,
+.delete:hover {
+  opacity: 0.75;
+}

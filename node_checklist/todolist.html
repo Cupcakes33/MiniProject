@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todolist.css" />
+    <title>todolist</title>
+  </head>
+  <body>
+    <header class="header">
+      <button class="header-buttons">항공권 비교</button>
+      <button class="header-buttons">국내 숙소 비교</button>
+      <button class="header-buttons">국내 날씨 검색</button>
+      <button class="header-buttons">반려동물 병원 검색</button>
+      <button class="header-buttons">포토 앨범</button>
+      <button class="header-buttons">체크리스트</button>
+    </header>
+    <section class="banner">
+      <img src="img/배.png" alt="배너이미지" />
+    </section>
+
+    <section class="todo-container">
+      <div class="create-todo-wrap">
+        <h3>체크리스트</h3>
+        <h4>즐거운 여행이 될 수 있도록 계획을 세워보세요 !</h4>
+        <form id="todo-form">
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="확인 할 일들을 기록해주세요"
+          />
+          <h3>분류</h3>
+          <div class="todo-option">
+            <label>
+              <input type="radio" name="category" id="category" value="일정" />
+              <span class="bubble calendar"></span>
+              <div>일정</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="category"
+                id="category1"
+                value="준비물"
+              />
+              <span class="bubble materials"></span>
+              <div>준비물</div>
+            </label>
+            <label>
+              <input type="radio" name="category" id="category2" value="예약" />
+              <span class="bubble reservation"></span>
+              <div>예약</div>
+            </label>
+          </div>
+          <input type="submit" value="일정 추가" />
+        </form>
+      </div>
+
+      <div class="paint-list-wrap">
+        <h3>확인해야 할 목록</h3>
+        <div class="list" id="todo-list"></div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="todolist.js"></script>
+  </body>
+</html>
