@@ -9,7 +9,7 @@ const port = 8000;
 let db;
 
 MongoClient.connect(
-  "mongodb+srv://cupcakes33:1q2w3e4r!@maindb.ozotx3u.mongodb.net/?retryWrites=true&w=majority",
+  "",
   { useUnifiedTopology: true },
   (error, client) => {
     if (error) return console.log("error");
